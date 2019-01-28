@@ -83,7 +83,7 @@ function handleFileSelect(evt) {
 						//console.log(feature)
 						contenido.innerHTML += `
 							<tr>
-							<td> ${"INSERT INTO zonascol (SHAPE,id_city) VALUES (GeomFromText('POLYGON(("}${feature.geometry.coordinates[0][0][0][0]} ${" "} ${feature.geometry.coordinates[0][0][0][1]}, ${feature.geometry.coordinates[0][0][1][0]} ${" "} ${feature.geometry.coordinates[0][0][1][1]}, ${feature.geometry.coordinates[0][0][2][0]} ${" "} ${feature.geometry.coordinates[0][0][2][1]}, ${feature.geometry.coordinates[0][0][3][0]} ${" "} ${feature.geometry.coordinates[0][0][3][1]}, ${feature.geometry.coordinates[0][0][4][0]} ${" "} ${feature.geometry.coordinates[0][0][4][1]}, ${feature.geometry.coordinates[0][0][5][0]} ${" "} ${feature.geometry.coordinates[0][0][5][1]}, ${feature.geometry.coordinates[0][0][6][0]} ${" "} ${feature.geometry.coordinates[0][0][6][1]} ${"))',0),"}${valor}${");"}</td>
+							<td> ${"INSERT INTO zonascol (SHAPE,id_city) VALUES (GeomFromText('POLYGON(("}${feature.geometry.coordinates[0][0][1][0]} ${" "} ${feature.geometry.coordinates[0][0][0][0]}, ${feature.geometry.coordinates[0][0][1][1]} ${" "} ${feature.geometry.coordinates[0][0][1][0]}, ${feature.geometry.coordinates[0][0][2][1]} ${" "} ${feature.geometry.coordinates[0][0][2][0]}, ${feature.geometry.coordinates[0][0][3][1]} ${" "} ${feature.geometry.coordinates[0][0][3][0]}, ${feature.geometry.coordinates[0][0][4][1]} ${" "} ${feature.geometry.coordinates[0][0][4][0]}, ${feature.geometry.coordinates[0][0][5][1]} ${" "} ${feature.geometry.coordinates[0][0][5][0]}, ${feature.geometry.coordinates[0][0][6][1]} ${" "} ${feature.geometry.coordinates[0][0][6][0]} ${"))',0),"}${valor}${");"}</td>
 							</tr>
 						`
 					});
