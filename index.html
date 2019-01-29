@@ -23,11 +23,11 @@
 	<br><center><h1 class="display-4 text-primary text-xs-center pb-1 mb-1" >&#9889; JSON &#9889;</h1></center><br>
 	
 	<center><div id="padre">
-		    <label for="labelNum">Agregar numero</label><br>
+		    <label for="labelNum">Agregar número</label><br>
 			<input type="number" id="numero" required="Debe ingresar un numero antes de adjuntar el archivo"/>
 			<div id="respuesta"></div>
 	</div><br>
-          <b>*Recuerde que primero debe agregar un numero*</b>
+          <b>*Recuerde que primero debe agregar un número*</b>
    </center>
 
 	<div class="container ">
@@ -135,17 +135,17 @@ function handleFileSelect(evt) {
 						`
 			
 			texto.push('\n');
-			texto.push('\n');
+	
 		});
 			
 			return new Blob(texto, {
-				type: 'text/plain'
+				type: 'sql/plain'
 			});
 		};
 
 		document.getElementById('boton-txt').addEventListener('click', function () {
 			var datos = obtenerDatos();
-			descargarArchivo(generarTexto(datos), 'archivo.txt');
+			descargarArchivo(generarTexto(datos), 'archivo.sql');
 		}, false);
 
 			}
