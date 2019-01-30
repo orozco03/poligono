@@ -80,7 +80,7 @@ function handleFileSelect(evt) {
 					
 					json = JSON.parse(e.target.result);
 					json.features.forEach(feature => {
-						console.log(feature)
+						//console.log(feature)
 						contenido.innerHTML += `
 							<tr>
 							<td> ${"INSERT INTO zonascol (SHAPE,id_city) VALUES (GeomFromText('POLYGON(("}${feature.geometry.coordinates[0][0][0][1]} ${" "} ${feature.geometry.coordinates[0][0][0][0]}, ${feature.geometry.coordinates[0][0][1][1]} ${" "} ${feature.geometry.coordinates[0][0][1][0]}, ${feature.geometry.coordinates[0][0][2][1]} ${" "} ${feature.geometry.coordinates[0][0][2][0]}, ${feature.geometry.coordinates[0][0][3][1]} ${" "} ${feature.geometry.coordinates[0][0][3][0]}, ${feature.geometry.coordinates[0][0][4][1]} ${" "} ${feature.geometry.coordinates[0][0][4][0]}, ${feature.geometry.coordinates[0][0][5][1]} ${" "} ${feature.geometry.coordinates[0][0][5][0]}, ${feature.geometry.coordinates[0][0][6][1]} ${" "} ${feature.geometry.coordinates[0][0][6][0]} ${"))',0),"}${valor}${");"}</td>
@@ -124,15 +124,16 @@ function handleFileSelect(evt) {
 
 		function generarTexto(datos) {
 			var texto = [];
-			
+			numero = ' ';
+			coma = ',';
+	        
 			json = JSON.parse(e.target.result);
 				json.features.forEach(feature => {
-						console.log(feature)
-						contenido.innerHTML += `
-							<tr>
-							<td> ${texto.push("INSERT INTO zonascol (SHAPE,id_city) VALUES (GeomFromText('POLYGON((")}${texto.push(feature.geometry.coordinates[0][0][0][1])} ${""} ${texto.push(feature.geometry.coordinates[0][0][0][0])}, ${texto.push(feature.geometry.coordinates[0][0][1][1])} ${" "} ${texto.push(feature.geometry.coordinates[0][0][1][0])}, ${texto.push(feature.geometry.coordinates[0][0][2][1])} ${" "} ${texto.push(feature.geometry.coordinates[0][0][2][0])}, ${texto.push(feature.geometry.coordinates[0][0][3][1])} ${" "} ${texto.push(feature.geometry.coordinates[0][0][3][0])}, ${texto.push(feature.geometry.coordinates[0][0][4][1])} ${" "} ${texto.push(feature.geometry.coordinates[0][0][4][0])}, ${texto.push(feature.geometry.coordinates[0][0][5][1])} ${" "} ${texto.push(feature.geometry.coordinates[0][0][5][0])}, ${texto.push(feature.geometry.coordinates[0][0][6][1])} ${" "} ${texto.push(feature.geometry.coordinates[0][0][6][0])} ${texto.push("))',0),")}${texto.push(valor)}${texto.push(");")}</td>
-							</tr>
-						`
+						//console.log(feature)
+						texto.innerHTML += `
+					
+							${texto.push("INSERT INTO zonascol (SHAPE,id_city) VALUES (GeomFromText('POLYGON((")}${texto.push(feature.geometry.coordinates[0][0][0][1])} ${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][0][0])} ${texto.push(coma)}${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][1][1])} ${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][1][0])} ${texto.push(coma)}${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][2][1])} ${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][2][0])} ${texto.push(coma)}${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][3][1])} ${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][3][0])} ${texto.push(coma)}${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][4][1])} ${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][4][0])} ${texto.push(coma)}${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][5][1])} ${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][5][0])} ${texto.push(coma)}${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][6][1])} ${texto.push(numero)} ${texto.push(feature.geometry.coordinates[0][0][6][0])} ${texto.push("))',0),")}${texto.push(valor)}${texto.push(");")}
+					`
 			
 			texto.push('\n');
 	
